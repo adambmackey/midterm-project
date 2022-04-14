@@ -2,7 +2,7 @@
 //then assign event listener and event listener will fire the handler function
 // event.preventDefault() first thing in function
 
-const { default: axios } = require("axios")
+// const { default: axios } = require("axios")
 
 //create a new element
 const form = document.querySelector('#myForm')
@@ -11,20 +11,18 @@ const dateInput = document.querySelector('#date')
 const imageInput = document.querySelector('#img')
 const textInfo = document.querySelector('#sum')
 
-function newLocation(){
+function newLocation(e){
+    e.preventDefault()
     let body = {
         destination: destinationInput.value,
         date: dateInput.value,
         image: imageInput.value,
-        summary: textInfo.value
+        description: textInfo.value
     }
-
+    console.log(body)
     axios.post('http://localhost:9876/api/location', body)
-    .then(res => console.log(1, res))
+    .then(res => console.log(res.data))
     .catch(err => console.log(err))
 }
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault()
-    newLocation()
-})
+form.addEventListener('submit', newLocation)
