@@ -23,11 +23,11 @@ header {
     grid-area: hd;
 }
 aside {
-    background: yellow;
+    background: gray;
     grid-area: sidebar;
 }
 main {
-    background: red;
+    background: gray;
     grid-area: main;
 }
 footer {

@@ -5,7 +5,7 @@ const app = express();
 const cors = require("cors");
 const { SERVER_PORT } = process.env;
 const { seed } = require("./seed.js");
-const {  postInfo, getInfo } = require("./travelController.js");
+const {  postInfo, getInfo, deleteTrip, updateTrip } = require("./travelController.js");
 
 app.use(express.json());
 app.use(cors());
@@ -16,5 +16,8 @@ app.post("/api/location", postInfo)
 
 app.get("/api/location", getInfo)
 
+app.delete("/api/location/:id", deleteTrip)
+
+app.put("/api/location/:id", updateTrip)
 
 app.listen(SERVER_PORT, () => console.log(`up on ${SERVER_PORT}`));

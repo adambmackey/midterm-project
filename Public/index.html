@@ -30,15 +30,24 @@
         </fieldset>
 
     </form>
+    <br>
+    <form id="editForm" style="display: none;">
+      <label for="updateDes">Where did you go?</label><br>
+            <input type="text" id="updateDes"><br>
+            <label for="updateDate">When did you go?</label><br>
+            <input type="text" id="updateDate"><br>
+            <label for="updateImg">Upload an image.</label><br>
+            <input type="text" id="updateImg"><br>
+            <label for="updateDescrip" >Write a description.</label><br>
+            <textarea name="message" rows="10" cols="30" id="description"></textarea>
+            <br><br>
+            <input type="submit" value="Submit" >
+    </form>
   </aside>
   <main id="cardDisplay" class="d-flex flex-row flex-wrap bd-highlight p-2 justify-content-center gap-1">
-    <h1>the cards will go here.</h1> 
+     
 </main>
-<footer>
-  <h1> this is a really awesome footer</h1>
 
-
-</footer>
     <script src="../node_modules/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
   </body>
